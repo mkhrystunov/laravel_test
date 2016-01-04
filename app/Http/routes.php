@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::post('api/register', 'TokenAuthController@register');
+Route::resource('api/user', 'UserController');
 Route::post('api/authenticate', 'TokenAuthController@authenticate');
 Route::get('api/authenticate/user', 'TokenAuthController@getAuthenticatedUser');
 Route::resource('api/todo', 'TodoController');
