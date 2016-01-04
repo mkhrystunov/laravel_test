@@ -46,14 +46,4 @@ class TokenAuthController extends Controller
 
         return response()->json($user);
     }
-
-    public function register(Request $request)
-    {
-        $newUser = $request->all();
-        $password = Hash::make($request->input('password'));
-
-        $newUser['password'] = $password;
-
-        return User::create($newUser);
-    }
 }
